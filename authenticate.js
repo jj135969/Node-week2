@@ -42,7 +42,7 @@ exports.verifyAdmin = (req, res, next) => {
     if(reg.user.admin) {
         next();
     } else {
-        err =  new Error('You are not authorized to perfrom this action!');
+        err =  new Error('You are not authorized to perfrom this operation!');
         err status = 403;
         return next(err);
     }
