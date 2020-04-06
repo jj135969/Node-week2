@@ -5,8 +5,6 @@ const Partner = require('../models/partner');
 const authenticate = require('../authenticate');
 const cors = require('./cors');
 
-
-
 partnerRouter.use(bodyParser.json());
 	
 partnerRouter.route('/')
@@ -85,7 +83,6 @@ partnerRouter.route('/:partnerId')
         res.json(response);
     })
     .catch(err => next(err));
-
 });
 
 module.exports = partnerRouter;

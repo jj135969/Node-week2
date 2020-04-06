@@ -5,8 +5,6 @@ const JwtStrategy = require('passport-jwt').Strategy;
 const ExtractJwt = require('passport-jwt').ExtractJwt;
 const jwt = require('jsonwebtoken'); // used to create, sign, and verify tokens
 const FacebookTokenStrategy = require('passport-facebook-token');
-
-
 const config = require('./config.js');
 
 exports.local = passport.use(new LocalStrategy(User.authenticate()));
@@ -45,7 +43,7 @@ exports.verifyAdmin = (req, res, next) => {
         next();
     } else {
         err =  new Error('You are not authorized to perfrom this operation!');
-        err status = 403;
+        err.status = 403;
         return next(err);
     }
 };
